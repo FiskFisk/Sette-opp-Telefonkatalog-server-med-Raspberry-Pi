@@ -1,19 +1,22 @@
 # Sette-opp-Telefonkatalog-server-med-Raspberry-Pi
 
 ## Sette opp Raspberry Pi og Oppsett Linux:
-	Intro:
+### Intro:
 Denne guiden hjelper deg med og sette opp en Raspberry Pi og Linxus. Mye av dette kan du gjøre med GUI også, men denne guiden vill vise osen du gjør det med terminalen.
 
 Oppsett av Raspberry Pi
 Oppdatering av systemet
-Oppsett av SSH
-Installering av programvare
-Sette opp databasen
-Koble Python til MariaDB
-Testing
-Forklare hvert steg tydelig:
+Sette opp en brannmur med UFW
+Sette opp SSH
+Fin IPen din - tenges for og bruke SSH
+Installering av Git, Python og MariaDB
+Sette opp en ny database-bruker og gi den riktig rettigheter
+installere andre programvare
+Styr maskinen fra laptopen/pcen din med SSH
+Logge inn på serveren (Pi) ghennom cmd i Windows
 
-	Guide:
+
+### Guide:
 
 ### Oppsett av Raspberry Pi:
 1. Koble sammen komponentene:
