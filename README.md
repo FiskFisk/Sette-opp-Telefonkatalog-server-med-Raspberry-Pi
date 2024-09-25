@@ -43,6 +43,7 @@ Sette opp en ny database-bruker og gi den riktig rettigheter:
 4. Oppdater rettigheter "FLUSH PRIVILAGES;"
 
 Nå kan du installere andre programvare som for eksempel VS CODE, en annen nettlserer, wireshark, nmap, ect:
+1. I Linux operativsystem installerer man programmer i terminalen med denne komandoen: "brukernavn@maskinnavn :~$ sudo apt install [programnavn]
 1. Hvis du får trøbbel med VS Code, last ned .deb for arm64 fra https://code.visualstudio.com/docs/setup/linux Naviger til mappen du laster ned filen.
 2. Skriv sudo apt install "./code" og trykk tab, så enter
 
