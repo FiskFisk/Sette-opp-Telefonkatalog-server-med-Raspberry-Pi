@@ -54,4 +54,5 @@ Nå så kan du styre Pien fra laptopen din med SSH, f.eks. i CMD eller PowerShel
 2. Skriv "ssh brukernavn@ip" (bytt ut brukenavn og ip med dine)
 
 PS: Skru av maskinen med "sudo shutdown now" og vent litt før du tar strømmen.
+
 Hva er sudo? ("sudo" står for "superuser do" og gir deg rettigheter til å utføre kommandoer som krever admin-privileges.
