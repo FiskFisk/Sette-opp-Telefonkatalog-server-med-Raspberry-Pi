@@ -4,45 +4,68 @@
 	Intro:
 Denne guiden hjelper deg med og sette opp en Raspberry Pi og Linxus. Mye av dette kan du gjøre med GUI også, men denne guiden vill vise osen du gjør det med terminalen.
 
+Oppsett av Raspberry Pi
+Oppdatering av systemet
+Oppsett av SSH
+Installering av programvare
+Sette opp databasen
+Koble Python til MariaDB
+Testing
+Forklare hvert steg tydelig:
+
 	Guide:
-Sette den opp:
-1.	Åpne boxen og bygg Raspberry pi-en. Følg denne turtorialen som viser osen du bygger en Raspberry Pi   https://www.youtube.com/watch?v=S9CYlpbSz-c.
-2.	Koble til en mus, tastatur og kjerm.
-3.	Koble til nettet ditt
 
-Server-oppsett:
-1.	press Ctrl + Alt + T på tastaturet ditt for og opne terminalen.(her skal du skrive kommandoene under)
-2.	skriv "sudo apt update" i terminalen og trykk enter, (Dette vil finne oppdateringer)
-3.	skriv derretter "sudo apt upgrade" (installere oppdateringer)
+### Oppsett av Raspberry Pi:
+1. Koble sammen komponentene:
+	* Åpne boksen: Pakk ut Raspberry Pi, koble til tastatur, mus, skjerm og nettverkskabel (om du bruker kablet nett).
+	* Følg denne videoen: Hvis du er usikker på hvordan du monterer Raspberry Pi, kan du følge denne videoen: YouTube video.
+2. Starte Raspberry Pi:
+	* Sett i strømmen: Når alle komponentene er koblet til, sett strømmen til Raspberry Pi.
+	* Oppdater operativsystemet: Åpne terminalen med Ctrl + Alt + T. Dette åpner et tekstvindu der du kan skrive kommandoer.
 
-Sette opp en brannmur med UFW (skriv det under i terminalen):
-1.	sudo apt intstall ufw (Installerer UFW “uncomplicated firewall”)
-2.	sudo ufw enable (aktiverer brannmuren ved oppstarts)
-3.	sudo ufw allow ssh ( tilater SSH-tilkoblinger gjennom brannmuren)
-4.	Du kan sjekke statusen på brannmuren ved å skrive "sudo ufw status"
+### Oppdatering av systemet:
+1. Oppdater pakkelisten:
+	* Skriv "sudo apt update" i terminalen og trykk Enter.
+		Forklaring: Dette oppdaterer listen over tilgjengelige programvarepakker og sørger for at du har den nyeste informasjonen.
+2. Installer oppdateringer:
+	* Skriv deretter "sudo apt upgrade" og trykk Enter.
+		* Forklaring: Dette installerer de nyeste versjonene av programvare som allerede er installert på systemet ditt.
 
-Slå på ssh:
-1.	sudo apt install openssh-server (installerer SSH-serveren)
-2.	sudp systemctl enable ssh (gjør at SSH slår seg på med oppstarts)
-3.	sudo systemctl starts ssh (starter SSH her og nå)
+### Sette opp en brannmur med UFW:
+1. Installer UFW:
+	* Skriv "sudo apt install ufw" og trykk Enter. Dette installerer en enkel brannmur.
+2. Aktiver brannmuren:
+	* Skriv "sudo ufw enable". Dette aktiverer brannmuren hver gang Raspberry Pi starter opp.
+3.Tillat SSH-tilkobling:
+	*Skriv "sudo ufw allow ssh". Dette gjør at du kan koble til Raspberry Pi fra en annen maskin.
+4. Sjekk statusen:
+	*For å bekrefte at brannmuren kjører, skriv "sudo ufw status".
 
-Fin IPen din - tenges for og bruke SSH:
+### Sette opp SSH:
+1. Installer SSH-serveren:
+	* Skriv "sudo apt install openssh-server" for å installere SSH-serveren som lar deg koble til Raspberry Pi eksternt.
+2. Aktiver SSH ved oppstart:
+	* Skriv "sudo systemctl enable ssh" for å sørge for at SSH alltid er aktivert når Raspberry Pi starter.
+3. Start SSH-serveren nå:
+	* Skriv "sudo systemctl start ssh" for å starte SSH-serveren umiddelbart.
+
+### Fin IPen din - tenges for og bruke SSH:
 1. "ip a"
 2. Hvis du har kablet nettverk så wil IP-adressen vises ved eth0: linje. Hvis du kun har trådløst vil IP-adressen vises ved wlan0: linje. IP-adressen vil vanligvis bli 10.2.3.x eller noe lingnende (x står for et nummer mellom 2 og 254)
 
-Installering av Git, Python og MariaDB:
+### Installering av Git, Python og MariaDB:
 1. sudo apt install python3-pip
 2. sudo apt install git
 3. sudo apt install mariadb-server
 4. sudo mysql_secure_installation
 
-Sette opp en ny database-bruker og gi den riktig rettigheter:
+### Sette opp en ny database-bruker og gi den riktig rettigheter:
 1. Logg inn i MariaDB "sudo mariadb -u root"
 2. Lag ny bruker "CREATE USER 'username'@'localhost' IDENTIFIED BY 'passowrd';"
 3. Gi den nye brukeren rettigheter "GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';"
 4. Oppdater rettigheter "FLUSH PRIVILAGES;"
 
-Nå kan du installere andre programvare som for eksempel VS CODE, en annen nettlserer, wireshark, nmap, ect:
+### Nå kan du installere andre programvare som for eksempel VS CODE, en annen nettlserer, wireshark, nmap, ect:
 1. I Linux operativsystem installerer man programmer i terminalen med denne komandoen: "brukernavn@maskinnavn :~$ sudo apt install [programnavn]
 1. Hvis du får trøbbel med VS Code, last ned .deb for arm64 fra https://code.visualstudio.com/docs/setup/linux Naviger til mappen du laster ned filen.
 2. Skriv sudo apt install "./code" og trykk tab, så enter
@@ -62,7 +85,7 @@ Hva er sudo? ("sudo" står for "superuser do" og gir deg rettigheter til å utf�
 
 For og logge in på brukeren in på PIen kan du skrive "mariadb -u [brukernavn] -p"
 
-##Logge inn på serveren (Pi) ghennom cmd i Windows
+## Logge inn på serveren (Pi) ghennom cmd i Windows
 1. Åpne command Prompt (cmd) og kjør (skriv): "ssh [brukernavn]@[ip-adresse]" bytt ut brukernanvet og ip-adressen til din Pi og press enter.
 ```
 Microsoft Windows [Version 10.0.22631.4112]
@@ -86,7 +109,7 @@ pi@raspberrypi:~ $
 ```
 Nå er har du connectet laptoppen/pcen din og raspberry Pi-en.
 
-##Last ned (kolen) prosjektet fra GitHub
+## Last ned (kolen) prosjektet fra GitHub
 lag en katelog som heter kode og hent/klon projectet fra GitHub.
 * pwd (print working directory)
 * mkdir (make directory)
@@ -123,7 +146,7 @@ Scriptene må kjøres i rekkefølgen angitt av
 tallene.pi@raspberrypi:~/kode/telefonkatalog_og_database/sql $
 pi@raspberrypi:~ $ sudo apt install [programnavn]
 ```
-##Lag database
+## Lag database
 logg inn i MariaDB og skriv/lim in koden fra de tre første sql-filene.
 ```
 CREATE DATABASE telefonkatalog;
