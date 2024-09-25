@@ -176,5 +176,3 @@ mydb = mysql.connector.connect(
 Kjør Python-koden telefonkatalog_oppdater_sql.py fra laptopen din, og sjekk om personene fra databasen
 dukker opp.
 
-Prøv også å legge til nye brukere i programmet, og logg inn i MariaDB på serveren og sjekk om de dukker
-opp i databasen med SELECT * FROM person.
