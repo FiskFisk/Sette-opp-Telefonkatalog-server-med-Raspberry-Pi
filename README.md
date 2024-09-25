@@ -52,7 +52,7 @@ Denne guiden hjelper deg med og sette opp en Raspberry Pi og Linxus. Mye av dett
 3. Start SSH-serveren nå:
 	* Skriv "sudo systemctl start ssh" for å starte SSH-serveren umiddelbart.
 
-### Fin IPen din - tenges for og bruke SSH:
+### Fin IP-en din - tenges for og bruke SSH:
 1. "ip a"
 2. Hvis du har kablet nettverk så wil IP-adressen vises ved eth0: linje. Hvis du kun har trådløst vil IP-adressen vises ved wlan0: linje. IP-adressen vil vanligvis bli 10.2.3.x eller noe lingnende (x står for et nummer mellom 2 og 254)
 
