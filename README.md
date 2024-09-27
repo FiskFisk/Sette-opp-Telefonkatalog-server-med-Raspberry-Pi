@@ -4,6 +4,8 @@
 ### Intro:
 Denne guiden hjelper deg med og sette opp en Raspberry Pi og Linxus. Mye av dette kan du gjøre med GUI også, men denne guiden vill vise osen du gjør det med terminalen.
 
+
+## Innhold
 - Oppsett av Raspberry Pi
 - Oppdatering av systemet
 - Sette opp en brannmur med UFW
